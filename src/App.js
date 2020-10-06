@@ -7,7 +7,7 @@ import ClickingImage from "./clickImage.js";
 class App extends React.Component {
   state = {
     click: 1,
-    score: 0,
+    score: 100,
     timeScore: 0,
   };
 
@@ -18,11 +18,9 @@ class App extends React.Component {
   };
 
   onHandleScore = (num) => {
-    if (this.state.score + num > 0) {
-      this.setState({
-        score: this.state.score + num,
-      });
-    }
+    this.setState({
+      score: this.state.score + num,
+    });
   };
 
   componentDidMount() {
@@ -44,8 +42,11 @@ class App extends React.Component {
         />
         <Store
           buy={(point, price) => {
-            this.onHandleScore(point);
-            this.handleTimed(price);
+            if (this.state.score + price >= 0) {
+              this.onHandleScore(price);
+              this.handleTimed(point);
+            } else {
+            }
           }}
         />
       </div>
