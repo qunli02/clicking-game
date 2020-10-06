@@ -1,20 +1,27 @@
 import React from "react";
 import "./App.css";
 import Store from "./store.js";
-import Score from "./sorce.js";
+import Score from "./score.js";
 import ClickingImage from "./clickImage.js";
 
 class App extends React.Component {
   state = {
     score: 0,
+    timeScore: 0,
   };
 
   onHandleClick = (e) => {
-    e.preventDefault();
     this.setState({
       score: this.state.score + 1,
     });
   };
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        score: this.state.score + this.state.timeScore,
+      });
+    }, 1000);
+  }
   render() {
     return (
       <div className="app">
