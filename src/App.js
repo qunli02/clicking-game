@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Store from "./store.js";
+import Score from "./sorce.js";
+import ClickingImage from "./clickImage.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    score: 0,
+  };
+
+  onHandleClick = () => {
+    this.setState({
+      score: this.state.score + 1,
+    });
+  };
+  render() {
+    return (
+      <div className="app">
+        <Score />
+        <ClickingImage />
+        <Store />
+      </div>
+    );
+  }
 }
 
 export default App;
