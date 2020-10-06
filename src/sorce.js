@@ -1,7 +1,13 @@
 import React from "react";
 
-function Score() {
-  return <div>Score</div>;
+function Score(props) {
+  return (
+    <div>
+      Score
+      <br />
+      {props.score}
+    </div>
+  );
 }
 
 export default Score;
