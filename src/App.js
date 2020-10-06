@@ -6,15 +6,25 @@ import ClickingImage from "./clickImage.js";
 
 class App extends React.Component {
   state = {
+    click: 1,
     score: 0,
     timeScore: 0,
   };
 
-  onHandleClick = (e) => {
+  handleTimed = (num) => {
     this.setState({
-      score: this.state.score + 1,
+      timeScore: this.state.timeScore + num,
     });
   };
+
+  onHandleScore = (num) => {
+    if (this.state.score + num > 0) {
+      this.setState({
+        score: this.state.score + num,
+      });
+    }
+  };
+
   componentDidMount() {
     setInterval(() => {
       this.setState({
@@ -23,11 +33,21 @@ class App extends React.Component {
     }, 1000);
   }
   render() {
+    console.log(this.state);
+
     return (
       <div className="app">
         <Score score={this.state.score} />
-        <ClickingImage onHandleClick={this.onHandleClick} />
-        <Store />
+        <ClickingImage
+          click={this.state.click}
+          onHandleClick={(num) => this.onHandleScore(num)}
+        />
+        <Store
+          buy={(point, price) => {
+            this.onHandleScore(point);
+            this.handleTimed(price);
+          }}
+        />
       </div>
     );
   }
