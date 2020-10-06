@@ -9,7 +9,8 @@ class App extends React.Component {
     score: 0,
   };
 
-  onHandleClick = () => {
+  onHandleClick = (e) => {
+    e.preventDefault();
     this.setState({
       score: this.state.score + 1,
     });
@@ -17,8 +18,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Score />
-        <ClickingImage />
+        <Score score={this.state.score} />
+        <ClickingImage onHandleClick={this.onHandleClick} />
         <Store />
       </div>
     );
