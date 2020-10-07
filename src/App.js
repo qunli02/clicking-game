@@ -50,7 +50,11 @@ class App extends React.Component {
     return (
       <div className="app">
         <div className="left-section">
-          <Score score={this.state.score} timeScore={this.state.timeScore} />
+          <Score
+            score={this.state.score}
+            timeScore={this.state.timeScore}
+            click={this.state.click}
+          />
           <ClickingImage
             click={this.state.click}
             onHandleClick={(num) => this.onHandleScore(num)}
