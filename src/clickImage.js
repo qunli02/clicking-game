@@ -16,7 +16,7 @@ class ClickImage extends React.Component {
     }, 50);
     setTimeout(function () {
       newDiv.remove();
-    }, 2000);
+    }, 1000);
   };
 
   render() {

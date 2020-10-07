@@ -39,11 +39,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Score score={this.state.score} timeScore={this.state.timeScore} />
-        <ClickingImage
-          click={this.state.click}
-          onHandleClick={(num) => this.onHandleScore(num)}
-        />
+        <div>
+          <Score score={this.state.score} timeScore={this.state.timeScore} />
+          <ClickingImage
+            click={this.state.click}
+            onHandleClick={(num) => this.onHandleScore(num)}
+          />
+        </div>
         <Store
           buypps={(point, price) => {
             if (this.state.score + price >= 0) {
