@@ -3,12 +3,22 @@ import "./App.css";
 import Store from "./store.js";
 import Score from "./score.js";
 import ClickingImage from "./clickImage.js";
+import Owned from "./owned.js";
 
 class App extends React.Component {
   state = {
     click: 1,
     score: 100,
     timeScore: 0,
+    s1: 0,
+    s2: 0,
+    c1: 0,
+    c2: 0,
+  };
+  handleOwned = (item) => {
+    let hash = {};
+    hash[item] = this.state[item] + 1;
+    this.setState(hash);
   };
 
   handleTimed = (num) => {
@@ -39,22 +49,36 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Score score={this.state.score} timeScore={this.state.timeScore} />
-        <ClickingImage
-          click={this.state.click}
-          onHandleClick={(num) => this.onHandleScore(num)}
+        <div className="left-section">
+          <Score
+            score={this.state.score}
+            timeScore={this.state.timeScore}
+            click={this.state.click}
+          />
+          <ClickingImage
+            click={this.state.click}
+            onHandleClick={(num) => this.onHandleScore(num)}
+          />
+        </div>
+        <Owned
+          s1={this.state.s1}
+          s2={this.state.s2}
+          c1={this.state.c1}
+          c2={this.state.c2}
         />
         <Store
-          buypps={(point, price) => {
+          buypps={(point, price, item) => {
             if (this.state.score + price >= 0) {
               this.onHandleScore(price);
               this.handleTimed(point);
+              this.handleOwned(item);
             }
           }}
-          buyppc={(point, price) => {
+          buyppc={(point, price, item) => {
             if (this.state.score + price >= 0) {
               this.onHandleScore(price);
               this.handleClick(point);
+              this.handleOwned(item);
             }
           }}
         />
