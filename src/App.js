@@ -39,7 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div>
+        <div className="left-section">
           <Score score={this.state.score} timeScore={this.state.timeScore} />
           <ClickingImage
             click={this.state.click}
