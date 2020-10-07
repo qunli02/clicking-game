@@ -17,6 +17,12 @@ class App extends React.Component {
     });
   };
 
+  handleClick = (num) => {
+    this.setState({
+      click: this.state.click + num,
+    });
+  };
+
   onHandleScore = (num) => {
     this.setState({
       score: this.state.score + num,
@@ -31,8 +37,6 @@ class App extends React.Component {
     }, 1000);
   }
   render() {
-    console.log(this.state);
-
     return (
       <div className="app">
         <Score score={this.state.score} />
@@ -41,11 +45,16 @@ class App extends React.Component {
           onHandleClick={(num) => this.onHandleScore(num)}
         />
         <Store
-          buy={(point, price) => {
+          buypps={(point, price) => {
             if (this.state.score + price >= 0) {
               this.onHandleScore(price);
               this.handleTimed(point);
-            } else {
+            }
+          }}
+          buyppc={(point, price) => {
+            if (this.state.score + price >= 0) {
+              this.onHandleScore(price);
+              this.handleClick(point);
             }
           }}
         />

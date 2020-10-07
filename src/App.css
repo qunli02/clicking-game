@@ -1,5 +1,28 @@
 .image {
   padding: 20px;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+}
+.app {
+  display: flex;
+}
+
+.point-indicator {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  position: absolute;
+  background-color: yellow;
+  transition: ease 4s;
+}
+
+.move-up {
+  top: 0 !important;
+}
+
+.store-button {
+  display: block;
 }
