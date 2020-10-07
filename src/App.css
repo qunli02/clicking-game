@@ -36,3 +36,7 @@
   border-right: turquoise solid 20px;
   height: 100vh;
 }
+
+.store {
+  border-left: turquoise solid 20px;
+}
