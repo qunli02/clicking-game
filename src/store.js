@@ -1,18 +1,24 @@
 import React from "react";
+import hand from "./hand.png";
 
 function Store(props) {
   return (
     <div className="store">
       <div>
         points/s Store
-        <br />
-        <button
-          className="store-button tooltip"
-          onClick={() => props.buypps(1, -100, "s1")}
-        >
-          1 pointer thing cost 100
-          <span className="tooltiptext">1 point per second cost 100</span>
-        </button>
+        <div className="flex">
+          <button
+            className="store-button tooltip flex"
+            onClick={() => props.buypps(1, -100, "s1")}
+          >
+            <img src={hand} width="50" height="50" alt="hand"></img>
+            <span className="tooltiptext">1 pointer thing cost 100</span>
+            <div>
+              <h1 className="0m">petting Hand</h1>
+              <p>Cost :100 pets</p>
+            </div>
+          </button>
+        </div>
         <button
           className="store-button tooltip"
           onClick={() => props.buypps(10, -1000, "s2")}

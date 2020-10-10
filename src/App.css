@@ -40,6 +40,13 @@
 .store {
   border-left: turquoise solid 20px;
 }
+.flex {
+  display: flex;
+}
+
+.zm {
+  margin: 0px;
+}
 
 .tooltip {
   position: relative;
