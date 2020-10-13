@@ -1,5 +1,6 @@
 import React from "react";
 import hand from "./hand.png";
+import person from "./person.png";
 
 function Store(props) {
   return (
@@ -14,17 +15,21 @@ function Store(props) {
             <img src={hand} width="50" height="50" alt="hand"></img>
             <span className="tooltiptext">1 pointer thing cost 100</span>
             <div>
-              <h1 className="0m">petting Hand</h1>
+              <h1 className="zm">petting Hand</h1>
               <p>Cost :100 pets</p>
             </div>
           </button>
         </div>
         <button
-          className="store-button tooltip"
+          className="store-button tooltip flex"
           onClick={() => props.buypps(10, -1000, "s2")}
         >
-          10 pointer thing cost 1000
+          <img src={person} width="50" height="50" alt="person"></img>
           <span className="tooltiptext">10 points per second cost 1000</span>
+          <div>
+            <h1 className="zm">helping person</h1>
+            <p>Cost :1000 pets</p>
+          </div>
         </button>
       </div>
       <div>
@@ -37,6 +42,7 @@ function Store(props) {
           1 extra point pre click cost 10
           <span className="tooltiptext">1 extra point pre click cost 10</span>
         </button>
+        <br />
         <button
           className="store-button tooltip"
           onClick={() => props.buyppc(10, -100, "c2")}
