@@ -23,9 +23,8 @@
 .move-up {
   top: 0 !important;
 }
-
-.store-button {
-  display: block;
+.button-inside {
+  margin: auto;
 }
 
 .center {
@@ -43,6 +42,9 @@
 .flex {
   display: flex;
 }
+.store-button {
+  width: 300px;
+}
 
 .zm {
   margin: 0px;
@@ -50,7 +52,6 @@
 
 .tooltip {
   position: relative;
-  display: inline-block;
 }
 
 /* Tooltip text */
