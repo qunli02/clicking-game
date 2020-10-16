@@ -42,9 +42,9 @@ class App extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.setState({
-        score: this.state.score + this.state.timeScore,
+        score: this.state.score + this.state.timeScore / 100,
       });
-    }, 1000);
+    }, 10);
   }
   render() {
     return (

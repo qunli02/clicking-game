@@ -1,7 +1,18 @@
 import React from "react";
-import shiba from "./shiba.jpg";
+import staticShiba from "./shiba.png";
+import shiba from "./shiba.gif";
 
 class ClickImage extends React.Component {
+  state = {
+    isShibaStatic: true,
+  };
+
+  toggleStatic = () => {
+    this.setState({
+      isShibaStatic: !this.state.isShibaStatic,
+    });
+  };
+
   clickEffect = (e) => {
     this.props.onHandleClick(this.props.click);
     const newDiv = document.createElement("div");
@@ -27,8 +38,15 @@ class ClickImage extends React.Component {
           this.clickEffect(e);
         }}
       >
-        image
-        <img src={shiba} width="200" height="200" alt="shiba"></img>
+        Pet the dog
+        <img
+          onMouseOver={this.toggleStatic}
+          onMouseLeave={this.toggleStatic}
+          src={this.state.isShibaStatic ? staticShiba : shiba}
+          width="200"
+          height="200"
+          alt="shiba"
+        ></img>
       </div>
     );
   }

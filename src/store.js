@@ -12,7 +12,13 @@ function Store(props) {
             className="store-button tooltip flex"
             onClick={() => props.buypps(1, -100, "s1")}
           >
-            <img src={hand} width="50" height="50" alt="hand"></img>
+            <img
+              className="button-inside"
+              src={hand}
+              width="50"
+              height="50"
+              alt="hand"
+            ></img>
             <span className="tooltiptext button-inside">
               1 pointer thing cost 100
             </span>
@@ -27,12 +33,18 @@ function Store(props) {
           className="store-button tooltip flex"
           onClick={() => props.buypps(10, -1000, "s2")}
         >
-          <img src={person} width="50" height="50" alt="person"></img>
+          <img
+            className="button-inside"
+            src={person}
+            width="50"
+            height="50"
+            alt="person"
+          ></img>
           <span className="tooltiptext button-inside">
             10 points per second cost 1000
           </span>
           <div className="button-inside">
-            <h1 className="zm">helping person</h1>
+            <h1 className="zm">person</h1>
             <p>Cost :1000 pets</p>
           </div>
           <h1 className="button-inside">{props.s2}</h1>
