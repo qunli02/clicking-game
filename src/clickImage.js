@@ -39,14 +39,23 @@ class ClickImage extends React.Component {
         }}
       >
         Pet the dog
-        <img
-          onMouseOver={this.toggleStatic}
-          onMouseLeave={this.toggleStatic}
-          src={this.state.isShibaStatic ? staticShiba : shiba}
-          width="200"
-          height="200"
-          alt="shiba"
-        ></img>
+        {this.state.isShibaStatic ? (
+          <img
+            onMouseOver={this.toggleStatic}
+            src={staticShiba}
+            width="200"
+            height="200"
+            alt="shiba"
+          ></img>
+        ) : (
+          <img
+            onMouseLeave={this.toggleStatic}
+            src={shiba}
+            width="220"
+            height="220"
+            alt="shiba"
+          ></img>
+        )}
       </div>
     );
   }
