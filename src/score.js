@@ -5,7 +5,7 @@ function Score(props) {
     <div className="score">
       <h1 className="center">
         Score <br />
-        {props.score}
+        {Math.floor(props.score)}
       </h1>
       <p className="center">{props.click} points per click</p>
       <p className="center">{props.timeScore} points per-seond</p>

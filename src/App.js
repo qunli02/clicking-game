@@ -42,9 +42,9 @@ class App extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.setState({
-        score: this.state.score + this.state.timeScore,
+        score: this.state.score + this.state.timeScore / 100,
       });
-    }, 1000);
+    }, 10);
   }
   render() {
     return (
@@ -67,6 +67,10 @@ class App extends React.Component {
           c2={this.state.c2}
         />
         <Store
+          s1={this.state.s1}
+          s2={this.state.s2}
+          c1={this.state.c1}
+          c2={this.state.c2}
           buypps={(point, price, item) => {
             if (this.state.score + price >= 0) {
               this.onHandleScore(price);
