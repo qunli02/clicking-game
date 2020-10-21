@@ -2,7 +2,7 @@ import React from "react";
 import staticShiba from "./shiba.png";
 import shiba from "./shiba.gif";
 
-class ClickImage extends React.Component {
+class ClickImage extends React.PureComponent {
   state = {
     isShibaStatic: true,
   };
@@ -18,7 +18,7 @@ class ClickImage extends React.Component {
     const newDiv = document.createElement("div");
     newDiv.className = "point-indicator";
     newDiv.style.top = `${e.clientY}px`;
-    newDiv.style.left = `${e.clientX}px`;
+    newDiv.style.left = `${e.clientX + 10}px`;
     newDiv.innerText = `+${this.props.click} points`;
     const app = document.querySelector(".image");
     app.appendChild(newDiv);
