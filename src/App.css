@@ -1,14 +1,19 @@
+body {
+  color: white;
+}
 .image {
-  border-top: turquoise solid 20px;
+  border-top: white solid 20px;
   padding: 20px;
   height: 200px;
   width: 200px;
 }
 .app {
   display: flex;
+  background-image: url("./back.jpg");
 }
 
 .point-indicator {
+  pointer-events: none;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -31,12 +36,12 @@
 }
 
 .left-section {
-  border-right: turquoise solid 20px;
+  border-right: white solid 20px;
   height: 100vh;
 }
 
 .store {
-  border-left: turquoise solid 20px;
+  border-left: white solid 20px;
 }
 .flex {
   display: flex;

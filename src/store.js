@@ -25,7 +25,8 @@ function Store(props) {
               alt="hand"
             ></img>
             <span className="tooltiptext button-inside">
-              1 pointer thing cost {increaseCost(100, props.s1)}
+              Petting Hand: it will help you automatically pet your shiba once
+              per second.
             </span>
             <div className="button-inside">
               <h1 className="zm">petting Hand</h1>
@@ -46,7 +47,8 @@ function Store(props) {
             alt="person"
           ></img>
           <span className="tooltiptext button-inside">
-            10 points per second cost {increaseCost(1000, props.s2)}
+            Friend: This is a new dog lover friend and will come over to pet
+            your dog 10 times per second.
           </span>
           <div className="button-inside">
             <h1 className="zm">person</h1>
