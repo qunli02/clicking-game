@@ -35,27 +35,31 @@ function Store(props) {
             <h1 className="button-inside">{props.s1}</h1>
           </button>
         </div>
-        <button
-          className="store-button tooltip flex"
-          onClick={() => props.buypps(10, increaseCost(-1000, props.s2), "s2")}
-        >
-          <img
-            className="button-inside"
-            src={person}
-            width="50"
-            height="50"
-            alt="person"
-          ></img>
-          <span className="tooltiptext button-inside">
-            Friend: This is a new dog lover friend and will come over to pet
-            your dog 10 times per second.
-          </span>
-          <div className="button-inside">
-            <h1 className="zm">person</h1>
-            <p>Cost :{increaseCost(1000, props.s2)} pets</p>
-          </div>
-          <h1 className="button-inside">{props.s2}</h1>
-        </button>
+        <div className="flex">
+          <button
+            className="store-button tooltip flex"
+            onClick={() =>
+              props.buypps(10, increaseCost(-1000, props.s2), "s2")
+            }
+          >
+            <img
+              className="button-inside"
+              src={person}
+              width="50"
+              height="50"
+              alt="person"
+            ></img>
+            <span className="tooltiptext button-inside">
+              Friend: This is a new dog lover friend and will come over to pet
+              your dog 10 times per second.
+            </span>
+            <div className="button-inside">
+              <h1 className="zm">person</h1>
+              <p>Cost :{increaseCost(1000, props.s2)} pets</p>
+            </div>
+            <h1 className="button-inside">{props.s2}</h1>
+          </button>
+        </div>
       </div>
       <div>
         clicker store

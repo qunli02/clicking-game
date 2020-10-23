@@ -1,8 +1,15 @@
 body {
+  margin: 0px;
+  text-shadow: 2px 2px 5px gray;
   color: white;
 }
+
+.owned {
+  width: 32vw;
+}
+
 .image {
-  border-top: white solid 20px;
+  margin-top: 15vh;
   padding: 20px;
   height: 200px;
   width: 200px;
@@ -10,6 +17,7 @@ body {
 .app {
   display: flex;
   background-image: url("./back.jpg");
+  background-size: cover;
 }
 
 .point-indicator {
@@ -36,11 +44,14 @@ body {
 }
 
 .left-section {
+  overflow-x: auto;
+  width: 32vw;
   border-right: white solid 20px;
   height: 100vh;
 }
 
 .store {
+  width: 32vw;
   border-left: white solid 20px;
 }
 .flex {

@@ -32,13 +32,8 @@ class ClickImage extends React.PureComponent {
 
   render() {
     return (
-      <div
-        className="image"
-        onClick={(e) => {
-          this.clickEffect(e);
-        }}
-      >
-        Pet the dog
+      <div className="image">
+        Pet the shiba dog
         {this.state.isShibaStatic ? (
           <img
             onMouseOver={this.toggleStatic}
@@ -49,6 +44,9 @@ class ClickImage extends React.PureComponent {
           ></img>
         ) : (
           <img
+            onClick={(e) => {
+              this.clickEffect(e);
+            }}
             onMouseLeave={this.toggleStatic}
             src={shiba}
             width="220"
