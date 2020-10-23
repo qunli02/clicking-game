@@ -2,7 +2,7 @@ import React from "react";
 
 const Owned = (props) => {
   return (
-    <div>
+    <div className="owned">
       <h1>Owned</h1>
 
       <p>1 point per click x{props.c1}</p>
