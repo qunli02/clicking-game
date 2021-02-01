@@ -11,6 +11,29 @@ function Store(props) {
   return (
     <div className="store">
       <div>
+        upgrades
+        <br />
+        <button
+          className="store-button tooltip"
+          onClick={() => props.buyppc(1, increaseCost(-10, props.c1), "c1")}
+        >
+          1 extra point pre click cost {increaseCost(10, props.c1)}
+          <span className="tooltiptext">
+            1 extra point pre click cost {increaseCost(10, props.c1)}
+          </span>
+        </button>
+        <br />
+        <button
+          className="store-button tooltip"
+          onClick={() => props.buyppc(10, increaseCost(-100, props.c2), "c2")}
+        >
+          10 extra point pre click cost {increaseCost(100, props.c2)}
+          <span className="tooltiptext">
+            10 extra point pre click cost {increaseCost(100, props.c2)}
+          </span>
+        </button>
+      </div>
+      <div>
         points/s Store
         <div className="flex">
           <button
@@ -60,29 +83,6 @@ function Store(props) {
             <h1 className="button-inside">{props.s2}</h1>
           </button>
         </div>
-      </div>
-      <div>
-        clicker store
-        <br />
-        <button
-          className="store-button tooltip"
-          onClick={() => props.buyppc(1, increaseCost(-10, props.c1), "c1")}
-        >
-          1 extra point pre click cost {increaseCost(10, props.c1)}
-          <span className="tooltiptext">
-            1 extra point pre click cost {increaseCost(10, props.c1)}
-          </span>
-        </button>
-        <br />
-        <button
-          className="store-button tooltip"
-          onClick={() => props.buyppc(10, increaseCost(-100, props.c2), "c2")}
-        >
-          10 extra point pre click cost {increaseCost(100, props.c2)}
-          <span className="tooltiptext">
-            10 extra point pre click cost {increaseCost(100, props.c2)}
-          </span>
-        </button>
       </div>
     </div>
   );
